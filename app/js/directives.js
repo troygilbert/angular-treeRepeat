@@ -281,6 +281,7 @@ angular.module('app.directives', [])
                     childScope.$last = (index === (arrayLength - 1));
                     childScope.$middle = !(childScope.$first || childScope.$last);
                     childScope.$odd = !(childScope.$even = index%2==0);
+                    childScope.$depth = $scope.$depth != undefined ? $scope.$depth + 1 : 0;
 
                     if (!block.startNode) {
                         linker(childScope, function(clone) {
